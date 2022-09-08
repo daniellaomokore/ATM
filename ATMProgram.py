@@ -21,7 +21,20 @@ Tasks:
 
 correctPin = 1234 #Initialise a correct pin code
 
-attempts = 0  #Initialise count of attemps to zero
+""" Checks if the users Pin is correct to grant access """
+
+def accountAccess():
+    attempts = 0  #Initialise count of attemps to zero
+    while attempts < 3:
+        pin = int(input("Please enter your pin:"))
+        if pin == correctPin:
+            print("Access granted")
+            withdrawMoney()
+            break
+        elif attempts < 3:
+            print("Incorrect pin, Try again")
+            attempts += 1
+
 
 """ I created my own user defined exception  """
 class negativeBalanceError(ValueError):
@@ -49,18 +62,7 @@ def withdrawMoney():
         print("Transaction Complete, Thanks for Using this ATM.")
 
 
-""" Checks if the users Pin is correct to grant access """
-while attempts < 3:
-    pin = int(input("Please enter your pin:"))
-    if pin == correctPin:
-        print("Access granted")
-        withdrawMoney()
-        break
-    elif attempts < 3:
-        print("Incorrect pin, Try again")
-        attempts += 1
-
-
+accountAccess() #Call the account access function
 
 
 
