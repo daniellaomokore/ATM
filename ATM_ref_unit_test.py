@@ -1,8 +1,5 @@
 #Unit test for the refactored ATM program#
 
-
-
-
 from unittest import mock
 from unittest import TestCase, main
 from ATM_ref import accountAccess, withdrawMoney
