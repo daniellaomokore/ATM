@@ -1,0 +1,43 @@
+class TestVerifyPint(TestCase):
+
+    def test_good_pin(self):
+        self.assertTrue(homework.verify_pin(pin='1234'))
+    
+
+    def test_bad_pin(self):
+        self.assertFalse(homework.verify_pin(pin='1111'))
+
+
+
+    class TestLogIn(TestCase):
+        def test_bad_login(self):
+            with mock.patch('builtins.input', side_effect=['111', '222', '333', '444']):
+                result = homework.log_in()
+                self.assertFalse(result)
+
+
+        def test_good_login(self):
+            with mock.patch('builtins.input', side_effect=['1234']):
+                result = homework.log_in()
+                self.assertTrue(result)
+
+class TestRunAtm(TestCase):
+    @mock.patch.object(homework, 'log_in')
+    @mock.patch.object(homework, 'log_in')
+    def test_run_atm_success_withdrawal(self, mock_verify_pin, mock_log_in):
+        mock_verify_pin.return_value = True
+        mock_log_in.return_value = True
+        result = homework.run_atm(withdrawal_amount=80)
+        self.assertEqual(result, 20)
+
+    @mock.patch.object(homework, 'log_in')
+    @mock.patch.object(homework, 'log_in')
+    def test_run_atm_raises_error(self, mock_verify_pin, mock_log_in):
+        mock_verify_pin.return_value = True
+        mock_log_in.return_value = True
+        with self.assertRaises(ValueError):
+            homework.run_atm(withdrawal_amount=500
+        
+
+if __name__ == '__main__':
+    main()
