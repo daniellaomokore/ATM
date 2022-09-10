@@ -41,10 +41,3 @@ def withdrawMoney(withdrawAmount):
 
     finally:
         print("Transaction Complete, Thanks for Using this ATM.")
-
-
-
-
-
-
-
