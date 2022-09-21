@@ -1,5 +1,3 @@
-#Unit test for the refactored ATM program#
-
 from unittest import mock
 from unittest import TestCase, main
 from ATM_ref import accountAccess, withdrawMoney
@@ -10,7 +8,7 @@ class test_successful_account_access(TestCase):            #it MUST start with t
     def test_correctPin(self):
         expected = True
         result = accountAccess(pin=1234)
-        self.assertEqual(expected, result)
+        self.assert(expected, result)
 
 class test_failed_account_access(TestCase):
 

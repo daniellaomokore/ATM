@@ -54,9 +54,8 @@ def withdrawMoney():
 
     except negativeBalanceError:
         print("You can't withdraw more than your available balance, Please Enter a valid amount.")
-
     else:
-        print("Your withdraw of £" + str(withdrawAmount) +  " has been Successfull. Your remaining balance is £" + str(accountBalance)+".")
+        print("Your withdraw of £" + str(withdrawAmount) +  " has been Successfull. Your remaining balance is £" + str(accountBalance) + ".")
 
     finally:
         print("Transaction Complete, Thanks for Using this ATM.")
